@@ -5,6 +5,7 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
+import MainWorp from '@/mainworp'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -36,15 +37,32 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
+  //404页面
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
-
+  {
+    path: '/headsMessage',
+    component: () => import('@/views/headsMessage'),
+    hidden: true
+  },
   {
     path: '/',
+    hidden: true,
+    redirect: '/mainPage',
+    component: MainWorp,
+    children: [{
+      path: 'mainPage',
+      name: 'MainPage',
+      component: () => import('@/views/main/index.vue'),
+      meta: { title: '首页', icon: 'dashboard' }
+    }]
+  },
+
+  {
+    path: '/dashboard',
     component: Layout,
     redirect: '/dashboard',
     children: [{
@@ -77,18 +95,18 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
+  // {
+  //   path: '/form',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'Form',
+  //       component: () => import('@/views/form/index'),
+  //       meta: { title: 'Form', icon: 'form' }
+  //     }
+  //   ]
+  // },
 
   {
     path: '/nested',
