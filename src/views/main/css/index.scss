@@ -1,6 +1,10 @@
 p {
     margin: 0px;
 }
+* {
+    padding: 0; //去掉默认内边距，也就是ul标签左边的内边距40px；
+    margin: 0; //去掉li的外边距。
+}
 .index {
     width: 100%;
     display: flex;
@@ -8,10 +12,12 @@ p {
     justify-content: center;
     align-items: center;
     flex: 0;
-    background-color: #ebebeb;
-    padding: 10px 5px;
+    background-color: #ffffff;
+    margin-top: 20px;
     .main {
         width: 1024px;
+        background-color: #ebebeb;
+        padding: 0px 5px;
         &-nav_box {
             display: flex;
             justify-content: space-around;
@@ -57,10 +63,51 @@ p {
         &-carousel {
             padding: 5px;
             background-color: #ffffff;
-            &-hea
-            &-img {
+            &-hea &-img {
                 width: 100%;
                 height: 100%;
+            }
+        }
+        &-header {
+            padding: 20px 0;
+            background-color: #ffffff;
+            &-title {
+                font-size: 30px;
+                font-weight: 500;
+                color: red;
+                text-align: center;
+            }
+            &-bottom {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+                color: green;
+                cursor: pointer;
+                &-item {
+                    padding: 0 10px;
+                }
+            }
+        }
+        &-middle {
+            display: grid;
+            // grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(3, auto);
+            grid-gap: 20px 20px;
+            margin-top: 10px;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+            &-msg {
+                height: 300px;
+                padding: 10px;
+                background-color: #ffffff;
+                border-radius: 4px;
+                padding: 5px;
+                overflow: hidden;
+                position: relative;
+                &-title {
+                    position: absolute;
+                    right: 10;
+                    top: 20px;
+                }
             }
         }
     }
