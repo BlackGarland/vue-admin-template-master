@@ -5,7 +5,7 @@
         background-color: #ffffff;
         // 顶部
         height: 150px;
-        background-image: url("../assets/404_images/404.png");
+        background-image: url("http://www.81.cn/syjdt/_attachment/2023/08/04/16242583_3b7c815868f1c3405c249d0e15500afa.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         display: flex;
@@ -15,6 +15,7 @@
         min-width: 1024px;
         flex-shrink: 0;
         margin-bottom: 20px;
+        border-radius: 8px;
         &-nav {
             margin-top: auto;
             width: 1024px;

@@ -58,7 +58,13 @@ export const constantRoutes = [
       name: 'MainPage',
       component: () => import('@/views/main/index.vue'),
       meta: { title: '首页', icon: 'dashboard' }
-    }]
+    },{
+      path: 'headsMessage',
+      name: 'HeadsMessage',
+      component: () => import('@/views/headsMessage/index.vue'),
+      meta: { title: '首长信箱', icon: 'dashboard' }
+    }
+  ]
   },
 
   {

@@ -195,6 +195,7 @@
 
         span {
           color: rgba(0, 153, 255, 0.801);
+          cursor: pointer;
         }
       }
     }

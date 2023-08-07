@@ -12,7 +12,7 @@
             <div v-for="(item, index) in list" :key="index">
               <div class="card-item" :style="{ minWidth: width }">
                 <el-card :body-style="{ padding: '0px' }">
-                  <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                  <img src="http://www.81.cn/syjdt/_attachment/2023/08/04/16242583_54ba413e859fe44916edb8fbc0bae6d5.jpg"
                     class="image" />
                   <div style="padding: 14px">
                   </div>
