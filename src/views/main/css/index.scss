@@ -372,7 +372,7 @@ p {
             justify-content: space-between;
             .left {
                 position: relative;
-                width: 60%;
+                width: 66%;
                 background-color: #ffffff;
                 padding: 10px;
                 .contribute {
@@ -421,7 +421,7 @@ p {
                 }
             }
             .right {
-                width: 38%;
+                width: 32%;
                 background-color: #ffffff;
                 padding: 10px;
                 .manuscript-list {
@@ -435,7 +435,7 @@ p {
             justify-content: space-between;
 
             &-left {
-                width: 60%;
+                width: 66%;
                 background-color: #ffffff;
                 padding: 10px;
                 .top {
@@ -455,7 +455,7 @@ p {
                     display: flex;
 
                     &-left {
-                        width: 65%;
+                        width: 66%;
                         img {
                             float: left;
                             width: 110px;
@@ -519,7 +519,7 @@ p {
             }
             &-right {
                 padding: 10px;
-                width: 38%;
+                width: 32%;
                 background-color: #ffffff;
                 &-item {
                     display: flex;
@@ -581,5 +581,75 @@ p {
         &:active {
             color: blue;
         }
+    }
+}
+.flex-Box_3 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .item {
+        width: 32%;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+}
+.flex-Box_31 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .item {
+        width: 32%;
+        padding: 10px;
+        background-color: #ffffff;
+        .header {
+            margin-bottom: 10px;
+            line-height: 30px;
+            border-bottom: 1px solid blue;
+            display: flex;
+            justify-content: space-between;
+            span {
+                &:first-child {
+                    padding-bottom: 5px;
+                    border-bottom: 5px solid blue;
+                }
+            }
+            .buttonBox {
+                display: flex;
+                background-color: green;
+                color: #ffffff;
+            }
+        }
+        .cointer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .news {
+                width: 29%;
+                height: 30px;
+            }
+            .link {
+                width: 24%;
+                display: flex;
+                flex-direction: column;
+                font-size: 16px;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+.five_button {
+    display: flex;
+    justify-content: space-between;
+    &-item {
+        width: 18%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
     }
 }

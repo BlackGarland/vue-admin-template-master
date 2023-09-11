@@ -31,40 +31,43 @@ import MainWorp from '@/mainworp'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
-export const constantRoutes = [
-  {
+export const constantRoutes = [{
     path: '/login',
     component: () => import('@/views/login/index'),
     hidden: true
   },
-  //404页面
+  // 404页面
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
-  {
-    path: '/headsMessage',
-    component: () => import('@/views/headsMessage'),
-    hidden: true
-  },
+  // {
+  //   path: '/headsMessage',
+  //   component: () => import('@/views/headsMessage'),
+  //   hidden: true
+  // },
   {
     path: '/',
     hidden: true,
     redirect: '/mainPage',
     component: MainWorp,
     children: [{
-      path: 'mainPage',
-      name: 'MainPage',
-      component: () => import('@/views/main/index.vue'),
-      meta: { title: '首页', icon: 'dashboard' }
-    },{
-      path: 'headsMessage',
-      name: 'HeadsMessage',
-      component: () => import('@/views/headsMessage/index.vue'),
-      meta: { title: '首长信箱', icon: 'dashboard' }
-    }
-  ]
+        path: 'mainPage',
+        name: 'MainPage',
+        component: () => import('@/views/main/index.vue'),
+        meta: {
+          title: '首页',
+          icon: 'dashboard'
+        }
+      },
+      // {
+      //   path: 'headsMessage',
+      //   name: 'HeadsMessage',
+      //   component: () => import('@/views/headsMessage/index.vue'),
+      //   meta: { title: '首长信箱', icon: 'dashboard' }
+      // }
+    ]
   },
 
   {
@@ -75,29 +78,69 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: {
+        title: 'Dashboard',
+        icon: 'dashboard'
+      }
+    }]
+  },
+  {
+    path: '/sentMsg',
+    component: Layout,
+    redirect: '/sentMsg/sentMsg',
+    children: [{
+      path: 'sentMsg',
+      name: 'SentMsg',
+      component: () => import('@/views/sentMsg/index'),
+      meta: {
+        title: '首长信箱',
+        icon: 'dashboard'
+      }
     }]
   },
 
   {
-    path: '/example',
+    path: '/headsMessage',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
+    redirect: '/headsMessage/list',
+    name: 'HeadsMessage',
+    meta: {
+      title: '信箱',
+      icon: 'el-icon-s-help'
+    },
+    children: [{
+        path: 'list',
+        name: 'List',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: {
+          title: '列表1',
+          icon: 'table'
+        },
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'list2',
+        name: 'List2',
+        component: () => import('@/views/table/index'),
+        meta: {
+          title: '列表2',
+          icon: 'table'
+        },
+      }, {
+        path: 'msgDetail',
+        name: 'MsgDetail',
+        component: () => import('@/views/table/detail'),
+        hidden: true,
+        meta: {
+          title: '信息详情',
+          activeMenu: '/headsMessage/list',
+        }
       }
+      // {
+      //   path: 'tree',
+      //   name: 'Tree',
+      //   component: () => import('@/views/tree/index'),
+      //   meta: { title: 'Tree', icon: 'tree' }
+      // }
     ]
   },
 
@@ -123,36 +166,43 @@ export const constantRoutes = [
       title: 'Nested',
       icon: 'nested'
     },
-    children: [
-      {
+    children: [{
         path: 'menu1',
         component: () => import('@/views/nested/menu1/index'), // Parent router-view
         name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
+        meta: {
+          title: 'Menu1'
+        },
+        children: [{
             path: 'menu1-1',
             component: () => import('@/views/nested/menu1/menu1-1'),
             name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            meta: {
+              title: 'Menu1-1'
+            }
           },
           {
             path: 'menu1-2',
             component: () => import('@/views/nested/menu1/menu1-2'),
             name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
+            meta: {
+              title: 'Menu1-2'
+            },
+            children: [{
                 path: 'menu1-2-1',
                 component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
                 name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
+                meta: {
+                  title: 'Menu1-2-1'
+                }
               },
               {
                 path: 'menu1-2-2',
                 component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
                 name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
+                meta: {
+                  title: 'Menu1-2-2'
+                }
               }
             ]
           },
@@ -160,7 +210,9 @@ export const constantRoutes = [
             path: 'menu1-3',
             component: () => import('@/views/nested/menu1/menu1-3'),
             name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
+            meta: {
+              title: 'Menu1-3'
+            }
           }
         ]
       },
@@ -168,7 +220,9 @@ export const constantRoutes = [
         path: 'menu2',
         component: () => import('@/views/nested/menu2/index'),
         name: 'Menu2',
-        meta: { title: 'menu2' }
+        meta: {
+          title: 'menu2'
+        }
       }
     ]
   },
@@ -176,21 +230,28 @@ export const constantRoutes = [
   {
     path: 'external-link',
     component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+    children: [{
+      path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+      meta: {
+        title: 'External Link',
+        icon: 'link'
       }
-    ]
+    }]
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {
+    path: '*',
+    redirect: '/404',
+    hidden: true
+  }
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({
+    y: 0
+  }),
   routes: constantRoutes
 })
 

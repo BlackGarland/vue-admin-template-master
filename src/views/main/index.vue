@@ -354,6 +354,96 @@
           </el-tabs>
         </div>
       </div>
+      <div class="flex-Box_3">
+        <div class="item">
+          <el-tabs v-model="activeName_8" @tab-click="handleClick">
+            <el-tab-pane label="外军情报" name="ljzs">
+              <div class="main-middle-voice">
+                <div class="top">
+                  <img :src="middle.voice[0][1].img" alt="">
+                  <img :src="middle.voice[0][2].img" alt="">
+                </div>
+                <ul class="bottom">
+                  <li v-for="(item,i) in middle.voice[0].slice(2)" :key="i" class="voice_box">
+                    <span>{{item.des}}</span>
+                  </li>
+                </ul>
+
+              </div>
+            </el-tab-pane>
+          </el-tabs>
+        </div>
+        <div class="item">
+          <el-tabs v-model="activeName_3" @tab-click="handleClick">
+            <el-tab-pane label="武器装备" name="slpl">
+              <newsBox :list="middle.listTszy" :type="3"></newsBox>
+            </el-tab-pane>
+          </el-tabs>
+        </div>
+        <div class="item">
+          <el-tabs v-model="activeName_3" @tab-click="handleClick">
+            <el-tab-pane label="演兵场上" name="slpl">
+              <newsBox :list="middle.listTszy" :type="3"></newsBox>
+            </el-tab-pane>
+          </el-tabs>
+        </div>
+      </div>
+      <div class="five_button">
+        <!-- 插入图片或者设置背景图 -->
+        <div class="five_button-item">首长信箱</div>
+        <div class="five_button-item">纪检委信箱</div>
+        <div class="five_button-item">不良信息举报平台</div>
+        <div class="five_button-item">水竹山大讲堂</div>
+        <div class="five_button-item">建言献策</div>
+      </div>
+      <div class="flex-Box_31">
+        <div class="item">
+          <div class="header">
+            <span>报刊杂志</span>
+          </div>
+          <div class="cointer">
+            <img class="news" src="" alt="">
+            <img class="news" src="" alt="">
+            <img class="news" src="" alt="">
+            <img class="news" src="" alt="">
+            <img class="news" src="" alt="">
+            <img class="news" src="" alt="">
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+            <div class="news">人民陆军</div>
+          </div>
+
+        </div>
+        <div class="item">
+          <div class="header">
+            <span>新媒体</span>
+          </div>
+          <div class="cointer">
+            <div class="link">
+              <img src="" alt="">
+              <span>共产党员</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="header">
+            <span>新媒体</span>
+            <div class="buttonBox">
+              <div>心理咨询</div>
+              <div>法律咨询</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

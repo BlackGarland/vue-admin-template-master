@@ -27,6 +27,10 @@ service.interceptors.request.use(
   error => {
     // do something with request error
     console.log(error) // for debug
+    this.$message({
+      type: 'info',
+      message: `error`
+    });
     return Promise.reject(error)
   }
 )
